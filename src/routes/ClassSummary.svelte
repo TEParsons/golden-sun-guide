@@ -21,7 +21,7 @@
         {#each ["venus", "mars", "jupiter", "mercury"] as emt}
             {#if spec.djinn[emt]}
                 {#each [...Array(spec.djinn[emt]).keys()] as _}
-                    <img src="/assets/{emt}-energy.png" alt="{emt}-energy" class=energy />
+                    <img src="assets/{emt}-energy.png" alt="{emt}-energy" class=energy />
                 {/each}
             {/if}
         {/each}

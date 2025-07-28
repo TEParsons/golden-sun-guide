@@ -3,7 +3,7 @@
     <a 
         href="#{adept}-adept"
     >
-        <img src="/assets/{adept}-energy.png" alt="{adept}-energy" class=energy />
+        <img src="assets/{adept}-energy.png" alt="{adept}-energy" class=energy />
     </a>
     {/each}
 </nav>

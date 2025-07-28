@@ -14,7 +14,7 @@
     onmouseleave={(evt) => hovered = false}
     role=none
 >
-    <img src="/assets/psynergy/{name}.png" alt={name} class=psynergy-icon />
+    <img src="assets/psynergy/{name}.png" alt={name} class=psynergy-icon />
     {#if hovered}
         <div class=psynergy-card transition:slide>
             <h4>{name} (level {spec.level})</h4>

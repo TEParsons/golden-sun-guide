@@ -31,7 +31,7 @@
             line={line}
         ></ClassLine>
     {/each}
-    <img src="/assets/{adept}-djinn.png" alt="{adept} djinn" class=djinn-img />
+    <img src="assets/{adept}-djinn.png" alt="{adept} djinn" class=djinn-img />
 </div>
 
 <style>
