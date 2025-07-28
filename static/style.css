@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Taranis';
+    src: url('assets/fonts/Taranis.ttf');
+}
+@font-face {
+    font-family: 'Quintessential';
+    src: url('assets/fonts/Quintessential.ttf');
+}
+
+
+:root {
+    font-family: "Quintessential";
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("assets/page-background.png");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: .5em 0 .1em 0;
+    font-family: "Quintessential";
+}
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+    margin-top: 0;
+}
+h1, h2 {
+    font-family: Taranis;
+}
