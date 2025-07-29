@@ -1,5 +1,6 @@
 <script>
-    import { slide } from "svelte/transition";
+    import { Tooltip } from "$lib/tooltip";
+
     let {
         spec
     } = $props()
@@ -18,15 +19,14 @@
         <div 
             class="stat-bar {attr}"
             style:width="calc(({spec[attr]} - 80%) * 0.8)"
+            style:background-color="var(--{attr})"
         ></div>
     {/each}
-    {#if hovered}
-    <div class=stats-card transition:slide>
+    <Tooltip bind:hovered={hovered}>
         {#each Object.keys(spec) as attr}
-        <b>{attr}:</b> {spec[attr]}<br>
+        <b style:color="var(--{attr})">{attr}:</b> {spec[attr]}<br>
         {/each}
-    </div>
-    {/if}
+    </Tooltip>
 </div>
 
 <style>
@@ -38,35 +38,7 @@
     .stat-bar {
         height: .25rem;
     }
-
-    .HP {
-        background-color: red;
-    }
     .PP {
-        background-color: blue;
-        margin-bottom: .25rem;
-    }
-    .ATK {
-        background-color: orange;
-    }
-    .DEF {
-        background-color: green;
-    }
-    .AGL {
-        background-color: violet;
-    }
-    .LCK {
-        background-color: gold
-    }
-
-    .stats-card {
-        pointer-events: none;
-        background-color: rgba(0, 0, 0, 0.75);
-        border-radius: .5rem;
-        padding: 1rem;
-        color: white;
-        position: absolute;
-        min-width: 20rem;
-        z-index: 1;
+        margin-bottom: .5rem;
     }
 </style>

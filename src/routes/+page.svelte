@@ -1,31 +1,25 @@
 <script>
-    import Adept from "./Adept.svelte";
-    import Navbar from "./Navbar.svelte";
+    import classes from "$lib/classes.json";
+    import ClassLine from "./ClassLine.svelte";
+    import { Notebook, NotebookPage } from "./notebook";
 </script>
 
-<div class=page>
-    <Navbar></Navbar>
-    <Adept 
-        adept=venus 
-        mugshots={["isaac", "felix"]}
-    ></Adept>
-    <Adept 
-        adept=mars 
-        mugshots={["garet", "jenna"]}
-    ></Adept>
-    <Adept 
-        adept=jupiter 
-        mugshots={["ivan", "sheba"]}
-    ></Adept>
-    <Adept 
-        adept=mercury 
-        mugshots={["mia", "piers"]}
-    ></Adept>
-</div>
-
-<style>
-    .page {
-        display: flex;
-        flex-direction: column;
-    }
-</style>
+<Notebook>
+    {#each [...[
+        ["venus", ["isaac", "felix"]],
+        ["mars", ["garet", "jenna"]],
+        ["jupiter", ["ivan", "sheba"]],
+        ["mercury", ["mia", "piers"]]
+    ]] as [adept, mugshots]}
+        <NotebookPage
+            adept={adept} 
+            mugshots={mugshots}
+        >
+            {#each Object.keys(classes[adept]) as line}
+                <ClassLine
+                    line={line}
+                ></ClassLine>
+            {/each}
+        </NotebookPage>
+    {/each}
+</Notebook>

@@ -1,5 +1,5 @@
 <script>
-    import { slide } from "svelte/transition";
+    import { Tooltip } from "$lib/tooltip";
     let {
         name,
         spec
@@ -15,27 +15,15 @@
     role=none
 >
     <img src="assets/psynergy/{name}.png" alt={name} class=psynergy-icon />
-    {#if hovered}
-        <div class=psynergy-card transition:slide>
-            <h4>{name} (level {spec.level})</h4>
-            <p>{spec.description}</p>
-        </div>
-    {/if}
+    <Tooltip bind:hovered={hovered}>
+        <h4>{name} (level {spec.level})</h4>
+        <p>{spec.description}</p>
+    </Tooltip>
 </div>
 
 <style>
     .psynergy-icon {
         width: 6mm;
         height: 6mm;
-    }
-    .psynergy-card {
-        pointer-events: none;
-        background-color: rgba(0, 0, 0, 0.75);
-        border-radius: .5rem;
-        padding: 1rem;
-        color: white;
-        position: absolute;
-        min-width: 20rem;
-        z-index: 1;
     }
 </style>

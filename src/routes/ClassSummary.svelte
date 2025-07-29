@@ -43,7 +43,7 @@
     .class {
         display: grid;
         grid-template-columns: auto min-content;
-        padding: .5rem;
+        padding: .5rem 0;
         width: 20rem;
     }
     .djinn-requirements, .psynergies {

@@ -14,7 +14,7 @@
 </script>
 
 
-<div class="class-line {adept} {line}">
+<div class="uibox class-line {adept} {line}">
     <h2>{line}</h2>
     {#each Object.keys(classes[adept][line]) as cls}
         <ClassSummary
@@ -25,11 +25,11 @@
 
 <style>
     .class-line {
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: .5rem;
-        background-color: rgba(255, 255, 255, 0.25);
         padding: 1rem;
-        z-index: 1;
+        z-index: 0;
         break-inside: avoid-page;
+    }
+    .class-line:hover {
+        z-index: 1;
     }
 </style>
