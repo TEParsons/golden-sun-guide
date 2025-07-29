@@ -3,6 +3,7 @@
     import Psynergy from "./Psynergy.svelte";
     import { getContext } from "svelte";
     import Stats from "./Stats.svelte";
+    import { Tooltip } from "$lib/tooltip";
 
     let {
         cls=undefined
@@ -13,11 +14,17 @@
     let line = getContext("line")
 
     let spec = classes[adept][line][cls];
+    let hovered = $state()
 </script>
 
 <div class="class {adept} {line}">
     <h3>{cls}</h3>
-    <div class="djinn-requirements">
+    <div 
+        class="djinn-requirements"
+        onmouseenter={(evt) => hovered = true}
+        onmouseleave={(evt) => hovered = false}
+        role=none
+    >
         {#each ["venus", "mars", "jupiter", "mercury"] as emt}
             {#if spec.djinn[emt]}
                 {#each [...Array(spec.djinn[emt]).keys()] as _}
@@ -25,6 +32,13 @@
                 {/each}
             {/if}
         {/each}
+        <Tooltip bind:hovered={hovered}>
+            {#each ["venus", "mars", "jupiter", "mercury"] as emt}
+                {#if spec.djinn[emt]}
+                    <div>{spec.djinn[emt]} {emt}</div>
+                {/if}
+            {/each}
+        </Tooltip>
     </div>
     <Stats
         spec={spec.stats}
