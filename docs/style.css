@@ -3,27 +3,91 @@
     src: url('assets/fonts/Taranis.ttf');
 }
 @font-face {
-    font-family: 'Quintessential';
-    src: url('assets/fonts/Quintessential.ttf');
+    font-family: 'Silkscreen';
+    src: url('assets/fonts/Silkscreen.ttf');
 }
 
 
 :root {
-    font-family: "Quintessential";
+    --base: #006088;
+    --mantle: #005870;
+    --crust: #005060;
+    --overlay: #004850;
+    --outline: #F8F8F8;
+    --outline-shadow: #505050;
+    --outline-highlight: #A0A0A0;
+
+    --text: #F8F8F8;
+    --hltext: #F8F800;
+
+    --HP: #F80000;
+    --PP: #0000F8;
+    --ATK: orange;
+    --DEF: green;
+    --AGL: violet;
+    --LCK: gold;
+
+    --venus: #F4EA1B;
+    --venus-shadow: #F36F21;
+    --mars: #ED1C24;
+    --mars-shadow: #6F0E0F;
+    --jupiter: #DF6FAB;
+    --jupiter-shadow: #5663AD;
+    --mercury: #6ACBD9;
+    --mercury-shadow: #3B51A3;
+
     scroll-behavior: smooth;
 }
 
+* {
+    font-family: Silkscreen;
+    font-size: 16px;
+    color: var(--text);
+    font-weight: normal;
+    text-shadow: 
+        2px 2px 0 black
+    ;
+}
+
 body {
-    background-image: url("assets/page-background.png");
+    background-image: 
+        linear-gradient(
+            45deg, rgba(0, 0, 0, .95), rgba(0, 0, 0, .8)
+        ),
+        url("assets/page-background.png")
+        ;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: .5em 0 .1em 0;
-    font-family: "Quintessential";
 }
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
     margin-top: 0;
 }
-h1, h2 {
+h1 {
+    font-size: 2rem;
     font-family: Taranis;
+}
+h2 {
+    font-size: 1.25rem;
+    
+}
+h2, h4 {
+    color: var(--hltext);
+}
+
+.uibox {
+    box-shadow: 
+        inset 2px 2px 0 var(--outline-shadow),
+        inset -2px -2px 0 var(--outline-highlight),
+        inset 6px 6px 12px var(--crust),
+        inset -6px -6px 12px var(--overlay),
+        0 2px 0 var(--outline-shadow),
+        2px 0 0 var(--outline-shadow),
+        0 -2px 0 var(--outline-highlight),
+        -2px 0 0 var(--outline-highlight)
+    ;
+    border: 2px solid var(--outline);
+    border-radius: 5px;
+    background-color: #006088;
 }
