@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 
-download_icons = True
+download_icons = False
 
 
 def table2dict(table):
@@ -78,7 +78,6 @@ output = {
 # get homepage
 resp = requests.get("https://www.goldensun-syndicate.net/gs/classes/")
 # iterate through links on homepage
-
 for link, name in re.findall(
     pattern=r"<dd><a href=\"([\w/]*)\">([\w\s]*)</a></dd>",
     string=str(resp.content)
@@ -219,7 +218,7 @@ for link, name in re.findall(
                 # add class to output
                 output[adeptType][line][name] = cls
 
-Path("classes.json").write_text(
+(Path(__file__).parent / "classes.json").write_text(
     json.dumps(output, indent=True)
 )
 
