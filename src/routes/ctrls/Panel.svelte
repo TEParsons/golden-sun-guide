@@ -1,6 +1,7 @@
 <script>
     import { slide } from "svelte/transition";
     import AvailableDjinn from "./AvailableDjinn.svelte";
+    import Level from "./Level.svelte";
 
     let expanded = $state(false)
 </script>
@@ -11,9 +12,10 @@
     {#if expanded}
         <div 
             class="uibox controls"
-            transition:slide={{axis: "x"}}
+            transition:slide={{axis: "y"}}
         >
             <AvailableDjinn></AvailableDjinn>
+            <Level></Level>
         </div>
     {/if}
     <button
@@ -43,7 +45,7 @@
         top: calc(100% + 1rem);
         right: 0;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 1rem;
     }
     button {

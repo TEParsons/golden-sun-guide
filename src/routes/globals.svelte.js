@@ -4,3 +4,5 @@ export let availableDjinn = $state({
     jupiter: 18,
     mercury: 18
 })
+
+export let level = $state({value: 100})
