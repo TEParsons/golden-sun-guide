@@ -24,10 +24,4 @@
         outline: none;
         margin-left: .5rem;
     }
-    label {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: .5rem;
-    }
 </style>
