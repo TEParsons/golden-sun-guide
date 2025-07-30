@@ -36,7 +36,8 @@
         margin: .5rem 0;
     }
     .stat-bar {
-        height: .25rem;
+        height: .4rem;
+        border: 1px solid rgba(0, 0, 0, 0.5);
     }
     .PP {
         margin-bottom: .5rem;
