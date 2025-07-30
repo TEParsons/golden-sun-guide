@@ -29,10 +29,8 @@
 </div>
 
 <style>
-    .psynergy {
-        transition: opacity .5s;
-    }
     .psynergy-icon {
+        transition: opacity .5s;
         width: 6mm;
         height: 6mm;
     }
