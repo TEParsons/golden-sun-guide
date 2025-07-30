@@ -14,7 +14,7 @@
 
 <div 
     class=notebook
-    style:grid-template-columns="auto repeat({pages.all.length}, min-content) auto"
+    style:grid-template-columns="auto repeat({pages.all.length + 1}, min-content) auto"
 >
     <div class=notebook-tab-filler></div>
     {@render children()}
@@ -34,6 +34,5 @@
     }
     .notebook-tab-filler {
         grid-row-start: tabs;
-
     }
 </style>

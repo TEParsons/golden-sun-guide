@@ -4,6 +4,8 @@
     import { getContext } from "svelte";
     import Stats from "./Stats.svelte";
     import { Tooltip } from "$lib/tooltip";
+    import { availableDjinn } from "./globals.svelte";
+
 
     let {
         cls=undefined
@@ -15,9 +17,19 @@
 
     let spec = classes[adept][line][cls];
     let hovered = $state()
+    // only display if there are enough available djinn
+    let viable = $derived(
+        Object.keys(spec.djinn).map(
+            (key) => spec.djinn[key] <= availableDjinn[key]
+        ).every((val) => val)
+    )
 </script>
 
-<div class="class {adept} {line}">
+
+<div 
+    class="class {adept} {line}"
+    style:opacity="{viable ? 1 : 0.2}"
+>
     <h3>{cls}</h3>
     <div 
         class="djinn-requirements"
@@ -59,6 +71,7 @@
         grid-template-columns: auto min-content;
         padding: .5rem 0;
         width: 20rem;
+        transition: opacity .5s;
     }
     .djinn-requirements, .psynergies {
         display: flex;

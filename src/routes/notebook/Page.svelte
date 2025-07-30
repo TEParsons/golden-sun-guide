@@ -37,7 +37,7 @@
         class="notebook-page"
         id="{adept}-adept"
         style:border-color="var(--{adept})"
-        style:grid-column-end="span {siblings.all.length + 2}"
+        style:grid-column-end="span {siblings.all.length + 3}"
     >
         {@render children()}
     </div>
