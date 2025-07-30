@@ -45,7 +45,6 @@
 
 <style>
     .notebook-tab {
-        padding: 1rem;
         color: var(--text);
         display: flex;
         flex-direction: row;

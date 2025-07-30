@@ -25,7 +25,6 @@
 
 <style>
     .class-line {
-        padding: 1rem;
         z-index: 0;
         break-inside: avoid-page;
     }

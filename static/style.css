@@ -90,4 +90,5 @@ h2, h4 {
     border: 2px solid var(--outline);
     border-radius: 5px;
     background-color: #006088;
+    padding: 1rem;
 }
